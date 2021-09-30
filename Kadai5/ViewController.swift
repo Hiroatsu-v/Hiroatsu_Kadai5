@@ -26,6 +26,7 @@ class ViewController: UIViewController {
             addAlert(message: "割る数に0を入力しないで下さい")
             return
         }
+        // 計算処理
         let resultNumber = String(leftNumber / rightNumber)
         resultLabel.text = resultNumber
     }
