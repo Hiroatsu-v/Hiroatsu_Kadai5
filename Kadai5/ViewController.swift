@@ -15,15 +15,15 @@ class ViewController: UIViewController {
     @IBAction private func calculateButton(_ sender: UIButton) {
         // nilチェックしながらアンラップ
         guard let leftNumber = Double(leftTextFiled.text!) else {
-            addAlert(message: "割られる数を入力して下さい")
+            presentAlert(message: "割られる数を入力して下さい")
             return
         }
         guard let rightNumber = Double(rightTextFiled.text!) else {
-            addAlert(message: "割る数を入力して下さい")
+            presentAlert(message: "割る数を入力して下さい")
             return
         }
         guard rightNumber != 0 else {
-            addAlert(message: "割る数に0を入力しないで下さい")
+            presentAlert(message: "割る数に0を入力しないで下さい")
             return
         }
         // 計算処理
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         resultLabel.text = resultNumber
     }
     // AlertController
-    private func addAlert(message: String) {
+    private func presentAlert(message: String) {
         let alertController = UIAlertController(title: "課題5", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
